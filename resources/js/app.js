@@ -8,11 +8,14 @@ import 'vue-toast-notification/dist/theme-bootstrap.css';
 import moment from "moment";
 
 const pinia = createPinia()
+import ToastService from 'primevue/toastservice';
+
 
 const app = createApp(App)
     .use(router)
     .use(pinia)
     .use(Toast)
+    .use(ToastService);
 
 app.config
     .globalProperties.$formatDate = (date, formatStr) => moment(date).format(formatStr);
